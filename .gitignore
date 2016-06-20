@@ -1,0 +1,14 @@
+.idea
+*.project
+*.sublime-project
+*.sublime-workspace
+
+node_modules
+npm-debug.log
+
+*.map
+unpackage
+
+bundle.js
+vendor.js
+vendors.js
