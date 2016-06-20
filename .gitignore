@@ -12,3 +12,5 @@ unpackage
 bundle.js
 vendor.js
 vendors.js
+
+.eslintrc.json
