@@ -8,8 +8,25 @@ import BrowserDemo from './BrowserDemo.jsx';
 import TabPanes from '../tabs/main.jsx';
 
 class Frame extends React.Component {
-    constructor(props){
-        super(props);
+    constructor(props, context){
+        super(props, context);
+        this.state = {
+            selectKey : '',
+            selectMenu: ''
+        };
+    }
+
+    handClick = (e) => {
+        console.log(e);
+        this.setState({
+            selectKey: e.key,
+            selectMenu: e.key
+        });
+    }
+
+    tabClick = (e) => {
+        console.log(e);
+        this.handClick({key: e});
     }
 
     render() {
@@ -30,7 +47,7 @@ class Frame extends React.Component {
                     <div className="ant-layout-wrapper">
                         <div className="ant-layout-container">
                             <aside className="ant-layout-sider">
-                                <Menu mode="inline">
+                                <Menu mode="inline" onClick={this.handClick} selectedKeys={[this.state.selectMenu]}>
                                     <Menu.Item key="1">
                                         <Icon type="mail" />商户录入
                                     </Menu.Item>            
@@ -42,7 +59,9 @@ class Frame extends React.Component {
                             <div className="ant-layout-content">
                                 <div style={{ height: 240 }}>
                                     <div style={{clear: 'both'}}>
-                                        <TabPanes />
+                                        <TabPanes 
+                                            tabClick={this.tabClick}
+                                            selectKey={this.state.selectKey}/>
                                     </div>
                                 </div>
                             </div>
