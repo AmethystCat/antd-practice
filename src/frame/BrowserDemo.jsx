@@ -8,7 +8,7 @@ export default function BrowserDemo(props) {
                     <div className="control minify"></div>
                     <div className="control expand"></div>
                 </div>
-                <input className="address-bar" defaultValue="http://www.example.com"/>
+                {/*<input className="address-bar" defaultValue="http://www.example.com"/>*/}
             </header>
             <section className="window-content">
                 {props.children}
