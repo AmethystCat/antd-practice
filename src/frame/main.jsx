@@ -4,15 +4,17 @@ import 'antd/dist/antd.css';
 import '../style/style.less';
 
 import { Menu, Icon } from 'antd';
-import BrowserDemo from './BrowserDemo.jsx';
+import Header from './header.jsx';
+import Footer from './footer.jsx';
 import TabPanes from '../tabs/main.jsx';
 
 class Frame extends React.Component {
     constructor(props, context){
         super(props, context);
         this.state = {
-            selectKey : '',
-            selectMenu: ''
+            selectKey : '0',
+            selectMenu: '',
+            tabPanesInfo: []
         };
     }
 
@@ -31,13 +33,9 @@ class Frame extends React.Component {
 
     render() {
         return (
-             <BrowserDemo>
+             <div className="container">
                 <div className="ant-layout-topaside">
-                    <div className="ant-layout-header">
-                        <div className="ant-layout-wrapper">
-                            <div className="ant-layout-logo">Homer</div>
-                        </div>
-                    </div>
+                    <Header/>
                     <div className="ant-layout-wrapper">
                         <div className="ant-layout-container">
                             <aside className="ant-layout-sider">
@@ -60,12 +58,10 @@ class Frame extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="ant-layout-footer">
-                            homer
-                        </div>
+                        <Footer/>
                     </div>
                 </div>
-            </BrowserDemo>
+            </div>
         );
     }
 }
