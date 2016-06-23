@@ -1,0 +1,7 @@
+// 常量
+const MENU_CHANGE = 'MENU_CHANGE';
+const TAB_CHANGE = 'TAB_CHANGE';
+const TAB_REMOVE = 'TAB_REMOVE';
+const TAB_ADD = 'TAB_ADD';
+
+export {MENU_CHANGE, TAB_CHANGE, TAB_REMOVE, TAB_ADD};

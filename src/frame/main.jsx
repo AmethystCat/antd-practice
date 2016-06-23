@@ -11,18 +11,14 @@ import TabPanes from '../tabs/main.jsx';
 class Frame extends React.Component {
     constructor(props, context){
         super(props, context);
-        this.state = {
-            selectKey : '0',
-            selectMenu: '',
-            tabPanesInfo: []
-        };
     }
 
     handClick = (e) => {
         console.log(e);
-        this.setState({
-            selectKey: e.key,
-            selectMenu: e.key
+        this.props.menuChange(e.key);
+        this.props.tabAdd({
+            selectTab: e.key,
+            key: e.key
         });
     }
 
@@ -32,6 +28,7 @@ class Frame extends React.Component {
     }
 
     render() {
+        const {menuTab} = this.props;
         return (
              <div className="container">
                 <div className="ant-layout-topaside">
@@ -39,11 +36,11 @@ class Frame extends React.Component {
                     <div className="ant-layout-wrapper">
                         <div className="ant-layout-container">
                             <aside className="ant-layout-sider">
-                                <Menu mode="inline" onClick={this.handClick} selectedKeys={[this.state.selectMenu]}>
-                                    <Menu.Item key="1">
+                                <Menu mode="inline" onClick={this.handClick} selectedKeys={[menuTab.selectMenu]}>
+                                    <Menu.Item key="商户录入">
                                         <Icon type="mail" />商户录入
                                     </Menu.Item>            
-                                    <Menu.Item key="2">
+                                    <Menu.Item key="商户列表">
                                         <Icon type="setting" />商户列表
                                     </Menu.Item>            
                                 </Menu>
@@ -53,7 +50,9 @@ class Frame extends React.Component {
                                     <div style={{clear: 'both'}}>
                                         <TabPanes 
                                             tabClick={this.tabClick}
-                                            selectKey={this.state.selectKey}/>
+                                            selectTab={menuTab.tabState.selectTab}
+                                            panes={menuTab.tabState.tabs}
+                                        />
                                     </div>
                                 </div>
                             </div>

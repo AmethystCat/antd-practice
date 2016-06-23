@@ -5,21 +5,27 @@ const TabPane = Tabs.TabPane;
 class TabPanes extends React.Component{
 	constructor(props){
 		super(props);
-		this.state = {
-			tabPanes : [
-				<TabPane tab={<span id="home-tab">Home</span>} key="0">选项卡一</TabPane>
-			]
-		};
+	}
+
+	getPanes = () => {
+		return this.props.panes.map((el, index) => {
+			return (
+				<TabPane tab={<span id={'tab-' + index}>{el}</span>} key={el}>选项卡 {index}</TabPane>
+			);
+		});
 	}
 
 	render() {
+		const {tabClick, selectTab} = this.props;
+		console.log(this.props);
+		let panes = this.getPanes();
 		return (
 			<Tabs 
-				activeKey={this.props.selectKey || '0'} 
-				onTabClick={this.props.tabClick} 
+				activeKey={selectTab || 'home'} 
+				onTabClick={tabClick} 
 				type="editable-card"
 				hideAdd>
-			    	{this.state.tabPanes}
+			    	{panes}
 			</Tabs>
 		);
 	}
