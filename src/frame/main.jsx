@@ -27,6 +27,13 @@ class Frame extends React.Component {
         this.handClick({key: e});
     }
 
+    tabDel = (targetKey) => {
+        console.log(targetKey);
+        this.props.tabRemove({
+            key: targetKey
+        });
+    }
+
     render() {
         const {menuTab} = this.props;
         return (
@@ -50,6 +57,7 @@ class Frame extends React.Component {
                                     <div style={{clear: 'both'}}>
                                         <TabPanes 
                                             tabClick={this.tabClick}
+                                            tabDel={this.tabDel}
                                             selectTab={menuTab.tabState.selectTab}
                                             panes={menuTab.tabState.tabs}
                                         />

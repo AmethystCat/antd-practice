@@ -27,9 +27,19 @@ export function tabState(state = {selectTab: 'home', tabs: ['home']}, action) {
 			return {...state, selectTab: obj.selectTab, tabs: state.tabs.concat(obj.key)};
 
 		case TAB_REMOVE:
-			return state.map((el) => {
-				if(el !== action.key) return el;
+			console.log(state);
+			console.log(action);
+			let arr,
+				lastKey,
+				delKey = action.tab.key;
+			state.tabs.forEach((el, index) => {
+				if (el === state.selectTab) {lastKey = index - 1;}
 			});
+			arr = state.tabs.filter(el => el!== delKey);
+			if (lastKey >= 0 && state.selectTab === delKey) {
+				return {...state, selectTab: state.tabs[lastKey], tabs: arr};
+			}
+			return {...state, tabs: arr};
 		default:
 			return state;
 	}

@@ -15,6 +15,12 @@ class TabPanes extends React.Component{
 		});
 	}
 
+	onEdit = (targetKey, action) => {
+		// 删除方法通过 onedit来调用，这是内部实现决定的
+		(action === 'remove') && this.props.tabDel(targetKey);
+		// this[action](targetKey);
+	}
+
 	render() {
 		const {tabClick, selectTab} = this.props;
 		console.log(this.props);
@@ -22,7 +28,8 @@ class TabPanes extends React.Component{
 		return (
 			<Tabs 
 				activeKey={selectTab || 'home'} 
-				onTabClick={tabClick} 
+				onTabClick={tabClick}
+				onEdit={this.onEdit}
 				type="editable-card"
 				hideAdd>
 			    	{panes}

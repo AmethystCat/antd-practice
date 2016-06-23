@@ -7,13 +7,6 @@ export function menuChange(key) {
 	};
 }
 
-export function tabChange(key) {
-	return {
-		type: action.TAB_CHANGE,
-		key
-	};
-}
-
 export function tabRemove(tab) {
 	return {
 		type: action.TAB_REMOVE,
