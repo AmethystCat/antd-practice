@@ -1,13 +1,11 @@
 import React from 'react'; 
-
 import 'antd/dist/antd.css';
 import '../style/style.less';
-
 import Menu from 'antd/lib/menu';
 import Icon from 'antd/lib/icon';
 import Header from './header.jsx';
 import Footer from './footer.jsx';
-import TabPanes from '../tabs/main.jsx';
+import TabPanes from '../components/tabs/main.jsx';
 
 class Frame extends React.Component {
     constructor(props, context){
