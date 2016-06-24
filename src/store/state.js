@@ -1,6 +1,6 @@
 const state = {
-	selectMenu: '',
 	tabState: {
+		selectMenu: '',
 		selectTab: 'home',
 		tabs: ['home']	
 	}

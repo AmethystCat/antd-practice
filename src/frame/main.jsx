@@ -3,7 +3,8 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import '../style/style.less';
 
-import { Menu, Icon } from 'antd';
+import Menu from 'antd/lib/menu';
+import Icon from 'antd/lib/icon';
 import Header from './header.jsx';
 import Footer from './footer.jsx';
 import TabPanes from '../tabs/main.jsx';
@@ -13,10 +14,16 @@ class Frame extends React.Component {
         super(props, context);
     }
 
+    static propTypes = {
+        menuTab: React.PropTypes.object.isRequired,
+        menuChange: React.PropTypes.func.isRequired,
+        tabAdd: React.PropTypes.func.isRequired
+    }
+
     handClick = (e) => {
         console.log(e);
-        this.props.menuChange(e.key);
         this.props.tabAdd({
+            selectMenu: e.key,
             selectTab: e.key,
             key: e.key
         });
@@ -43,7 +50,7 @@ class Frame extends React.Component {
                     <div className="ant-layout-wrapper">
                         <div className="ant-layout-container">
                             <aside className="ant-layout-sider">
-                                <Menu mode="inline" onClick={this.handClick} selectedKeys={[menuTab.selectMenu]}>
+                                <Menu mode="inline" onClick={this.handClick} selectedKeys={[menuTab.tabState.selectMenu]}>
                                     <Menu.Item key="商户录入">
                                         <Icon type="mail" />商户录入
                                     </Menu.Item>            

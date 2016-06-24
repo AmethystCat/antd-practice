@@ -1,9 +1,7 @@
-import {selectMenu, tabState} from './menuTab-reducer';
+import tabState from './menuTab-reducer';
 import { combineReducers } from 'redux';
 let rootReducer = combineReducers({
-	selectMenu,
-	tabState,
-	tabs: (state = []) => state
+	tabState
 });
 
 export default rootReducer;

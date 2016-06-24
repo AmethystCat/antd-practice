@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tabs } from 'antd';
+import Tabs from 'antd/lib/tabs';
 const TabPane = Tabs.TabPane;
 
 class TabPanes extends React.Component{
@@ -7,11 +7,23 @@ class TabPanes extends React.Component{
 		super(props);
 	}
 
+	static propTypes = {
+		tabClick: React.PropTypes.func.isRequired,
+		tabDel: React.PropTypes.func.isRequired,
+		selectTab: React.PropTypes.string.isRequired,
+		panes: React.PropTypes.array.isRequired
+	}
+
 	getPanes = () => {
 		return this.props.panes.map((el, index) => {
-			return (
-				<TabPane tab={<span id={'tab-' + index}>{el}</span>} key={el}>选项卡 {index}</TabPane>
-			);
+			switch(el) {
+				case '商户录入':
+					return (<TabPane tab={<span id={'tab-' + index}>{el}</span>} key={el}>商户录入</TabPane>);
+				case '商户列表':
+					return (<TabPane tab={<span id={'tab-' + index}>{el}</span>} key={el}>商户列表</TabPane>);
+				default:
+					return (<TabPane tab={<span id={'tab-' + index}>{el}</span>} key={el}>Home<input type="text" /></TabPane>);
+			}
 		});
 	}
 
@@ -23,7 +35,6 @@ class TabPanes extends React.Component{
 
 	render() {
 		const {tabClick, selectTab} = this.props;
-		console.log(this.props);
 		let panes = this.getPanes();
 		return (
 			<Tabs 
