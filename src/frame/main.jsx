@@ -19,7 +19,6 @@ class Frame extends React.Component {
     }
 
     handClick = (e) => {
-        console.log(e);
         this.props.tabAdd({
             selectMenu: e.key,
             selectTab: e.key,
@@ -28,12 +27,10 @@ class Frame extends React.Component {
     }
 
     tabClick = (e) => {
-        console.log(e);
         this.handClick({key: e});
     }
 
     tabDel = (targetKey) => {
-        console.log(targetKey);
         this.props.tabRemove({
             key: targetKey
         });
@@ -58,7 +55,7 @@ class Frame extends React.Component {
                                 </Menu>
                             </aside>
                             <div className="ant-layout-content">
-                                <div style={{ height: 240 }}>
+                                <div style={{ minHeight: 240 }}>
                                     <div style={{clear: 'both'}}>
                                         <TabPanes 
                                             tabClick={this.tabClick}
