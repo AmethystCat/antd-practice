@@ -52,12 +52,7 @@ var config_dev = {
             {
             	test: /\.(js|jsx)$/,
             	loader: 'babel-loader',
-            	exclude: [path.resolve(__dirname, 'node_modules')],
-            	// query: {
-            	// 	presets: ['es2015', 'react', 'stage-0'],
-            	// 	plugins: ['transform-runtime'],
-            	// 	cacheDirectory: true
-            	// }
+            	exclude: [path.resolve(__dirname, 'node_modules')]
             },
         	{
         		test: /\.(woff|woff2|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
