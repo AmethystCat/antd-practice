@@ -99,8 +99,12 @@ var config_production = {
     module: {
         loaders: [
             {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+            },
+            {
 				test: /\.less$/,
-				loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap', 'less-loader?sourceMap')
+				loader: ExtractTextPlugin.extract('style-loader', 'css-loader', 'less-loader')
 			},
 			{
                 test: /\.(jpg|jpeg|png|gif|)$/i,
