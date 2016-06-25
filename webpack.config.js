@@ -25,7 +25,7 @@ var config_dev = {
 		root: '/src',
 		extensions: ['', '.js', 'jsx', '.json', '.less']
 	},
-	devtool: 'eval-source-map',
+	devtool: 'eval',
 	module: {
 		preLoaders: [
             {
@@ -39,11 +39,11 @@ var config_dev = {
 		loaders: [
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap')
+                loaders: ['style-loader', 'css-loader?sourceMap']
             },
 			{
 				test: /\.less$/,
-				loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap', 'less-loader?sourceMap')
+				loaders: ['style-loader', 'css-loader?sourceMap', 'less-loader?sourceMap']
 			},
 			{
                 test: /\.(jpg|jpeg|png|gif|)$/i,
@@ -61,7 +61,6 @@ var config_dev = {
 		]
 	},
 	plugins: [
-		new ExtractTextPlugin('style.css'),
 		new webpack.NoErrorsPlugin(),
         new webpack.HotModuleReplacementPlugin(),
 		new webpack.optimize.CommonsChunkPlugin('vendors', 'js/vendors.js')
