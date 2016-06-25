@@ -9,7 +9,7 @@ class Shops extends React.Component {
     render() {
         return (
         	<div>
-        		<Button type="dashed" icon="plus">添加店铺</Button>
+        		<div className="btn-add-w"><Button type="dashed" icon="plus">添加店铺</Button></div>
         		<div className="shop-c"></div>
         	</div>
         );
