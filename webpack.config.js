@@ -98,7 +98,7 @@ var config_production = {
             },
             {
 				test: /\.less$/,
-				loader: ExtractTextPlugin.extract('style-loader', 'css-loader', 'less-loader')
+				loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'less-loader'])
 			},
 			{
                 test: /\.(jpg|jpeg|png|gif|)$/i,
@@ -122,7 +122,7 @@ var config_production = {
     },
     devtool: 'cheap-module-source-map',
     plugins: [
-		new ExtractTextPlugin('/build/css/style.css'),
+		new ExtractTextPlugin('/build/css/style.css', {allChunk: true}),
 		new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
 	]
 };
