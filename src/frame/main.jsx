@@ -6,6 +6,7 @@ import Icon from 'antd/lib/icon';
 import Header from './header.jsx';
 import Footer from './footer.jsx';
 import TabPanes from '../components/tabs/main.jsx';
+import InputPanel from '../pages/input_info/input-shop-panel.jsx';
 
 class Frame extends React.Component {
     constructor(props, context){
@@ -40,7 +41,7 @@ class Frame extends React.Component {
         const {menuTab} = this.props;
         return (
              <div className="container">
-                <div className="ant-layout-topaside">
+                <div className="ant-layout-topaside mask">
                     <Header/>
                     <div className="ant-layout-wrapper">
                         <div className="ant-layout-container">
@@ -70,6 +71,7 @@ class Frame extends React.Component {
                         <Footer/>
                     </div>
                 </div>
+                <InputPanel/>
             </div>
         );
     }
