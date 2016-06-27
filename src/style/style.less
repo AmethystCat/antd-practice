@@ -1,7 +1,14 @@
 body {
 	background: skyblue;
 }
+.pl10 {padding-left: 10px;}
+.ml10 {margin-left: 10px;}
+.ml20 {margin-left: 20px;}
+.ml50 {margin-left: 50px;}
+.clearfix {clear: both;}
 .ant-layout-topaside {
+	position: relative;
+	z-index: 1;
 	height: 100%;
 }
 
@@ -65,7 +72,6 @@ body {
 #tab-0 + i {
 	display: none;
 }
-
 .input-w {
 	@w: 600px;
 	position: relative;
@@ -99,13 +105,91 @@ body {
 }
 .shops-w {
 	@w: 600px;
+	@h: 50px;
 	width: @w;
 	float: left;
 	.btn-add-w {
 		.ant-btn.ant-btn-dashed {
-			width: 300px;
-			height: 50px;
+			width: @w - 200;
+			height: @h;
 			font-size: 18px;
 		}
 	}
+	.shop-c {
+		.item {
+			margin-top: 10px;
+			.ant-btn.ant-btn-dashed {
+				width: @w - 200;
+				height: @h;
+				margin-right: 15px;
+			}
+		}
+	}
+}
+/* 添加店铺组件style */
+.shop-add-w {
+	@p: 10px;
+	@h: 650px;
+	&.show {
+		.add-panel {
+			height: @h;
+		}
+		.mask {
+			opacity: 1;
+			z-index: 2
+		}
+	}
+	.add-panel,.mask {
+		transition: all .4s cubic-bezier(0.18, 0.89, 0.06, 1.04);
+	}
+	.add-panel {
+		position: fixed;
+		bottom: @p;
+		left: @p;
+		right: @p;
+		z-index: 3;
+		height: 0;
+		padding: @p;
+		border-radius: 10px;
+		background: rgba(255,255,255,.9);
+		box-shadow: 0 0 5px #666;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+	.mask {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+		background: rgba(0, 0, 0, 0.1);
+		opacity: 0;
+	}
+	.btn-w {
+		float: left;
+		width: 100%;
+		// margin-top: 10px;
+		padding-top: 20px;
+		padding-left: @h - 150;
+		border-top: 1px solid #f2f2f2;
+		.ant-btn {
+			width: @h/5;
+		}
+	}
+}
+.ant-layout-topaside.mask {
+	filter: blur(3px);
+	-webkit-filter: blur(3px);
+}
+
+.btn-close {
+	position: absolute;
+	right: 10px;
+	top: 0;
+}
+.btn-cancel {
+	margin-left: 80px;
 }
