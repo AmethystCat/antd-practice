@@ -227,10 +227,7 @@ class Inputs extends React.Component {
 					    </FormItem>
 					  </Form>
         		</div>
-        		
-        		<div className="shops-w">
-        			<Shops />
-        		</div>
+        		<Shops />
         	</div>
         );
     }
