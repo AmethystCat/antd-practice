@@ -65,45 +65,45 @@ class List extends React.Component {
     render() {
         return (
         	<div className="list-w">
-	    		<div className="search-w">
-	    			<SearchInput />	
-	    		</div>
-	    		<div className="filter-w">
-	    			<div className="filter-item filter-time">
-	   					<label>签约时间：</label>
-	   					<RangePicker style={{ width: 184 }} />
-	    			</div>
-	    			<div className="filter-item filter-status">
-	    				<label>签约状态：</label>
-	    				<Select defaultValue="lucy" style={{ width: 120 }}>
-		      				<Option value="jack">Jack</Option>
-			      			<Option value="lucy">Lucy</Option>
-			      			<Option value="disabled" disabled>Disabled</Option>
-			      			<Option value="yiminghe">yiminghe</Option>
-			    		</Select>
-	    			</div>
-	    			<div className="filter-item filter-type">
-	    				<label>商户类型：</label>
-	    				<Select defaultValue="lucy" style={{ width: 120 }}>
-		      				<Option value="jack">Jack</Option>
-			      			<Option value="lucy">Lucy</Option>
-			      			<Option value="disabled" disabled>Disabled</Option>
-			      			<Option value="yiminghe">yiminghe</Option>
-			    		</Select>
-	    			</div>
-	    			<div className="filter-item filter-formula-mode">
-	    				<label>计算方式：</label>
-	    				<Select defaultValue="lucy" style={{ width: 120 }}>
-		      				<Option value="jack">Jack</Option>
-			      			<Option value="lucy">Lucy</Option>
-			      			<Option value="disabled" disabled>Disabled</Option>
-			      			<Option value="yiminghe">yiminghe</Option>
-			    		</Select>
-	    			</div>
-	    		</div>
-	    		<div className="table-w">
-	    			<Table columns={columns} dataSource={data}/>
-	    		</div>
+  	    		<div className="search-w">
+  	    			<SearchInput />	
+  	    		</div>
+  	    		<div className="filter-w">
+  	    			<div className="filter-item filter-time">
+  	   					<label>签约时间：</label>
+  	   					<RangePicker style={{ width: 184 }} />
+  	    			</div>
+  	    			<div className="filter-item filter-status">
+  	    				<label>签约状态：</label>
+  	    				<Select defaultValue="lucy" style={{ width: 120 }}>
+  		      				<Option value="jack">Jack</Option>
+  			      			<Option value="lucy">Lucy</Option>
+  			      			<Option value="disabled" disabled>Disabled</Option>
+  			      			<Option value="yiminghe">yiminghe</Option>
+  			    		</Select>
+  	    			</div>
+  	    			<div className="filter-item filter-type">
+  	    				<label>商户类型：</label>
+  	    				<Select defaultValue="lucy" style={{ width: 120 }}>
+  		      				<Option value="jack">Jack</Option>
+  			      			<Option value="lucy">Lucy</Option>
+  			      			<Option value="disabled" disabled>Disabled</Option>
+  			      			<Option value="yiminghe">yiminghe</Option>
+  			    		</Select>
+  	    			</div>
+  	    			<div className="filter-item filter-formula-mode">
+  	    				<label>结算方式：</label>
+  	    				<Select defaultValue="lucy" style={{ width: 120 }}>
+  		      				<Option value="jack">Jack</Option>
+  			      			<Option value="lucy">Lucy</Option>
+  			      			<Option value="disabled" disabled>Disabled</Option>
+  			      			<Option value="yiminghe">yiminghe</Option>
+  			    		</Select>
+  	    			</div>
+  	    		</div>
+  	    		<div className="table-w">
+  	    			<Table columns={columns} dataSource={data}/>
+  	    		</div>
 	        </div>
 	    );
     }
