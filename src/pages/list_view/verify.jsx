@@ -54,8 +54,6 @@ const data = [{
     address: '西湖区湖底公园1号'
 }];
 
-
-
 class ListVerify extends React.Component {
     constructor(props) {
         super(props);

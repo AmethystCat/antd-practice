@@ -221,3 +221,82 @@ body {
 		margin-top: @p*3;
 	}
 }
+/* admin--setting */
+.setting-w {
+	@w: 600px;
+	@p: 10px;
+	.setting-item {
+		float: left;
+		width: @w;
+		margin-right: @p;
+		margin-bottom: @p*2;
+		h3 {
+			padding-left: @p;
+			font-weight: normal;
+			background: #f1f1f1;
+		}
+		.add-input-w {
+			margin-top: @p*2;
+			input {
+				width: 70%;
+				margin-right: @p;
+				vertical-align: bottom;
+			}
+		}
+		.add-content-w {
+			margin-top: @p;
+			overflow: auto;
+			.item {
+				float: left;
+				border: 1px solid #d9d9d9;
+				border-radius: 6px;
+				margin-right: @p;
+				background: #f7f7f7;
+				overflow: hidden;
+			 	span {
+			 		display: inline-block;
+			 		padding:0 @p;
+			 		vertical-align: middle;
+			 	}
+			 	.ant-btn-group button {
+			 		border-color: #ececec;
+			 		border-top: 0;
+			 		border-bottom: 0;
+			 		border-radius: 0;
+			 		padding: 0 4px;
+			 	}
+			}
+		}
+	}
+}
+.manage-w {
+	@p: 10px;
+	.manage-item {
+		margin-bottom: @p*3;
+		h3 {
+			&:extend(.setting-w .setting-item h3);
+		}
+		.add-input-w {
+			padding-top: @p*2;
+		}
+		.btn-add-w {
+			text-align: center;
+			button {
+				width: @p*10;
+			}
+		}
+		.table-w {
+			padding-top: @p*2;
+		}
+	}
+}
+.pop-edit {
+	width: 270px;
+	input {
+		width: 62%;
+		vertical-align: bottom;
+	}
+	button {
+		margin-left: 5px;
+	}
+}
