@@ -57,7 +57,7 @@ const data = [{
 
 
 
-class List extends React.Component {
+class ListVerified extends React.Component {
     constructor(props) {
         super(props);
         this.displayName = 'List';
@@ -73,26 +73,8 @@ class List extends React.Component {
 	   					<label>签约时间：</label>
 	   					<RangePicker style={{ width: 184 }} />
 	    			</div>
-	    			<div className="filter-item filter-status">
-	    				<label>签约状态：</label>
-	    				<Select defaultValue="lucy" style={{ width: 120 }}>
-		      				<Option value="jack">Jack</Option>
-			      			<Option value="lucy">Lucy</Option>
-			      			<Option value="disabled" disabled>Disabled</Option>
-			      			<Option value="yiminghe">yiminghe</Option>
-			    		</Select>
-	    			</div>
-	    			<div className="filter-item filter-type">
-	    				<label>商户类型：</label>
-	    				<Select defaultValue="lucy" style={{ width: 120 }}>
-		      				<Option value="jack">Jack</Option>
-			      			<Option value="lucy">Lucy</Option>
-			      			<Option value="disabled" disabled>Disabled</Option>
-			      			<Option value="yiminghe">yiminghe</Option>
-			    		</Select>
-	    			</div>
 	    			<div className="filter-item filter-formula-mode">
-	    				<label>计算方式：</label>
+	    				<label>结算方式：</label>
 	    				<Select defaultValue="lucy" style={{ width: 120 }}>
 		      				<Option value="jack">Jack</Option>
 			      			<Option value="lucy">Lucy</Option>
@@ -109,4 +91,4 @@ class List extends React.Component {
     }
 }
 
-export default List;
+export default ListVerified;

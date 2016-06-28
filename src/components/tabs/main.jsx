@@ -1,7 +1,11 @@
 import React from 'react';
 import Tabs from 'antd/lib/tabs';
+import * as consts from '../const/main';
 import Inputs from '../../pages/input_info/entry.jsx';
-import List from '../../pages/list_view/entry.jsx';
+import Setting from '../../pages/setting/entry.jsx';
+import SalesManagement from '../../pages/sales_management/entry.jsx';
+import ListVerify from '../../pages/list_view/verify.jsx';
+import ListVerified from '../../pages/list_view/verified.jsx';
 const TabPane = Tabs.TabPane;
 
 class TabPanes extends React.Component{
@@ -17,12 +21,19 @@ class TabPanes extends React.Component{
 	}
 
 	getPanes = () => {
+		let c = consts.default; // {SETTING: xxx, ....}
 		return this.props.panes.map((el, index) => {
 			switch(el) {
-				case '商户录入':
+				case c.MODIFY:
 					return (<TabPane tab={<span id={'tab-' + index}>{el}</span>} key={el}><Inputs /></TabPane>);
-				case '商户列表':
-					return (<TabPane tab={<span id={'tab-' + index}>{el}</span>} key={el}><List /></TabPane>);
+				case c.SETTING:
+					return (<TabPane tab={<span id={'tab-' + index}>{el}</span>} key={el}><Setting /></TabPane>);
+				case c.SALES_MANAGEMENT:
+					return (<TabPane tab={<span id={'tab-' + index}>{el}</span>} key={el}><SalesManagement /></TabPane>);
+				case c.VERIFY_LIST:
+					return (<TabPane tab={<span id={'tab-' + index}>{el}</span>} key={el}><ListVerify /></TabPane>);
+				case c.VERIFIED_LIST:
+					return (<TabPane tab={<span id={'tab-' + index}>{el}</span>} key={el}><ListVerified /></TabPane>);
 				default:
 					return (<TabPane tab={<span id={'tab-' + index}>{el}</span>} key={el}>Home<input type="text" /></TabPane>);
 			}

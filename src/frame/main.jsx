@@ -6,6 +6,7 @@ import Icon from 'antd/lib/icon';
 import Header from './header.jsx';
 import Footer from './footer.jsx';
 import TabPanes from '../components/tabs/main.jsx';
+import * as consts from '../components/const/main';
 import InputPanel from '../pages/input_info/input-shop-panel.jsx';
 
 class Frame extends React.Component {
@@ -39,6 +40,7 @@ class Frame extends React.Component {
 
     render() {
         const {menuTab} = this.props;
+        const c = consts.default;
         return (
              <div className="container">
                 <div className="ant-layout-topaside">
@@ -47,12 +49,18 @@ class Frame extends React.Component {
                         <div className="ant-layout-container">
                             <aside className="ant-layout-sider">
                                 <Menu mode="inline" onClick={this.handClick} selectedKeys={[menuTab.tabState.selectMenu]}>
-                                    <Menu.Item key="商户录入">
-                                        <Icon type="mail" />商户录入
+                                    <Menu.Item key={c.SETTING}>
+                                        <Icon type="setting" />{c.SETTING}
                                     </Menu.Item>            
-                                    <Menu.Item key="商户列表">
-                                        <Icon type="setting" />商户列表
+                                    <Menu.Item key={c.SALES_MANAGEMENT}>
+                                        <Icon type="team" />{c.SALES_MANAGEMENT}
+                                    </Menu.Item>
+                                    <Menu.Item key={c.VERIFY_LIST}>
+                                        <Icon type="exception" />{c.VERIFY_LIST}
                                     </Menu.Item>            
+                                    <Menu.Item key={c.VERIFIED_LIST}>
+                                        <Icon type="book" />{c.VERIFIED_LIST}
+                                    </Menu.Item>             
                                 </Menu>
                             </aside>
                             <div className="ant-layout-content">
