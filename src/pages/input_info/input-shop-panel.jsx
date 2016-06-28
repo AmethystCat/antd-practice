@@ -67,7 +67,7 @@ class InputPanel extends React.Component {
 			hasFeedback: true
     	};
         return (
-        	<div className="shop-add-w show">
+        	<div className="shop-add-w">
                 <div className="mask"></div>
                 <div className="add-panel">
                 	<div className="input-w">

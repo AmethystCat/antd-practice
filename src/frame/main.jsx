@@ -41,7 +41,7 @@ class Frame extends React.Component {
         const {menuTab} = this.props;
         return (
              <div className="container">
-                <div className="ant-layout-topaside mask">
+                <div className="ant-layout-topaside">
                     <Header/>
                     <div className="ant-layout-wrapper">
                         <div className="ant-layout-container">

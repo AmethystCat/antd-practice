@@ -64,8 +64,8 @@ class Inputs extends React.Component {
     	};
         return (
         	<div className="input-w">
-        		<div className="commercial-w">
-        			<Form horizontal>
+        		<Form horizontal>
+        			<div className="commercial-w">
 					    <FormItem
 					    	prefixCls="ant-form"
 					      	id="control-input"
@@ -225,9 +225,14 @@ class Inputs extends React.Component {
 					    >
 					     	<Cascader options={options} onChange={this.onChange} placeholder="请选择地区" />
 					    </FormItem>
-					  </Form>
-        		</div>
-        		<Shops />
+					    
+        			</div>
+        			<Shops />
+        			<div className="btn-w--submit">
+				    	<Button type="primary" size="default">保存</Button>
+				    	<Button type="primary" size="default">提交审核</Button>
+				    </div>
+        		</Form>
         	</div>
         );
     }
