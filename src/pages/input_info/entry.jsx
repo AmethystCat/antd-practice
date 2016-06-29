@@ -1,4 +1,4 @@
-import React from 'react';
+import  React from 'react';
 import  Button from 'antd/lib/button';
 import  Form from 'antd/lib/form';
 import  Input from 'antd/lib/input';
@@ -6,7 +6,7 @@ import  Select from 'antd/lib/select';
 import  Radio  from 'antd/lib/radio';
 import  DatePicker   from 'antd/lib/date-picker';
 import  Cascader from 'antd/lib/cascader';
-import Shops from './add-shops.jsx';
+import  Shops from './add-shops.jsx';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -43,6 +43,39 @@ class Inputs extends React.Component {
         super(props);
         this.displayName = 'Inputs';
     }
+
+	state = {
+		isNormalUser: true,
+		banks : []
+	}
+
+	componentDidMount() {
+		server.web_bank_list({}, (res) => {
+			if (res.code === 0) {
+				this.setState({
+					banks: res.data
+				});
+			}
+		});
+	}
+
+	onStateChange = (e) => {
+		console.log(e.target.value);
+	}
+
+	onUserChange = (e) => {
+		console.log(e.target.value);
+		let val = e.target.value;
+		if (val == 2) {
+			this.setState({
+				isNormalUser: false
+			});
+		} else {
+			this.setState({
+				isNormalUser: true
+			});
+		}
+	}
 
     handleSelectChange = (value) => {
 	  	console.log(`selected ${value}`);
@@ -123,11 +156,11 @@ class Inputs extends React.Component {
 					      	label="拜访状态"
 					      	{...formItemLayout}
 					    >
-					      	<RadioGroup defaultValue="b">
-					        	<Radio value="a">洽谈中</Radio>
-					        	<Radio value="b">已签约</Radio>
-					        	<Radio value="c">暂缓</Radio>
-					        	<Radio value="d">拒绝合作</Radio>
+					      	<RadioGroup defaultValue="1" onChange={this.onStateChange}>
+					        	<Radio value="1">洽谈中</Radio>
+					        	<Radio value="5">已签约</Radio>
+					        	<Radio value="2">暂缓</Radio>
+					        	<Radio value="3">拒绝合作</Radio>
 					      	</RadioGroup>
 					    </FormItem>
 					    <FormItem
@@ -141,9 +174,9 @@ class Inputs extends React.Component {
 					      	label="商户类型"
 					      	{...formItemLayout}
 					    >
-					      	<RadioGroup defaultValue="a">
-					        	<Radio value="a">普通用户</Radio>
-					        	<Radio value="b">预付款用户</Radio>
+					      	<RadioGroup defaultValue="1" onChange={this.onUserChange}>
+					        	<Radio value="1">普通用户</Radio>
+					        	<Radio value="2">预付款用户</Radio>
 					      	</RadioGroup>
 					    </FormItem>
 					    <FormItem
@@ -155,9 +188,10 @@ class Inputs extends React.Component {
 					    </FormItem>
 					    <FormItem
 					      	id="control-input"
+							prefixCls={this.state.isNormalUser ? 'hide ant-form' : 'ant-form'}
 					      	label="预付款"
 					      	{...formItemLayout}
-					      	required
+
 					    >
 					    	0元 
 					    	<div className="btn-w--chongzhi">
@@ -168,7 +202,8 @@ class Inputs extends React.Component {
 					      	id="control-input"
 					      	label="预警金额"
 					      	{...formItemLayout}
-					      	required
+							prefixCls={this.state.isNormalUser ? 'hide ant-form' : 'ant-form'}
+
 					    >
 					     	<Input id="control-input" placeholder="请输入预警金额" /> 元
 					    </FormItem>
@@ -202,11 +237,10 @@ class Inputs extends React.Component {
 					      	{...formItemLayout}
 					      	required
 					    >
-						    <Select id="select" size="large" defaultValue="lucy" style={{ width: 200 }} onChange={this.handleSelectChange}>
-						        <Option value="jack">jack</Option>
-						        <Option value="lucy">lucy</Option>
-						        <Option value="disabled" disabled>disabled</Option>
-						        <Option value="yiminghe">yiminghe</Option>
+						    <Select id="select" size="large" placeholder="请选择所属银行"  style={{ width: 200 }} onChange={this.handleSelectChange}>
+								{this.state.banks.map((el, index) => {
+									return <Option key={'bank' + index} value={el.code}>{el.name}</Option>;
+								})}
 						    </Select>
 					    </FormItem>
 					    <FormItem
