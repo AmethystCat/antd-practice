@@ -92,12 +92,12 @@ var send = function (type, api, parameters, success, async) {
 
     // 修改商户
     server.web_merchant_update = function (data, callback) {
-        return send('post', contextPath + '/web/merchant/create', data, callback);
+        return send('post', contextPath + '/web/merchant/update', data, callback);
     };
 
-    // 商户列表（业务员）
+    // 商户列表
     server.web_merchant_operator_list = function (data, callback) {
-        return send('post', contextPath + '/web/merchant/create', data, callback);
+        return send('post', contextPath + '/web/merchant/operator/list', data, callback);
     };
 
     // 商户提审（管理员）
@@ -155,12 +155,12 @@ var send = function (type, api, parameters, success, async) {
     //     return send('post', contextPath + '/web/shop/offline', data, callback);
     // };
 
-    // 店铺重新上线（admin
+    // 店铺重新上线（admin）
     // server.web_shop_online = function (data, callback) {
     //     return send('post', contextPath + '/web/shop/online', data, callback);
-    // };）
+    // };
 
-    // 省市类表（admin|operator）
+    // 省份列表（admin|operator）
     server.web_area_provinces = function (data, callback) {
         return send('post', contextPath + '/web/area/provinces', data, callback);
     };
