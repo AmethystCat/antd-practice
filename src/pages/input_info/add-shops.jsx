@@ -1,11 +1,18 @@
 import React from 'react';
-import  Button from 'antd/lib/button';
+import Button from 'antd/lib/button';
 
 class Shops extends React.Component {
     constructor(props) {
         super(props);
         this.displayName = 'Shops';
     }
+
+	componentDidMount() {
+		server.web_bank_list({}, (res) => {
+			console.log(res);
+		});
+	}
+
     render() {
         return (
         	<div className="shops-w">

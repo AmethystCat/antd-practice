@@ -67,13 +67,13 @@ var config_dev = {
 	],
 	devServer: {
             hot: true,
-            inline: true
-            // proxy: {
-            //   '/*': {
-            //       target: 'http://www.homer.com/',
-            //       secure: false
-            //   }
-            // }
+            inline: true,
+            proxy: {
+              '/*': {
+                  target: 'http://localhost:3000/',
+                  secure: false
+              }
+            }
         }
 };
 

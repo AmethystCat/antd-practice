@@ -1,0 +1,15 @@
+{
+	"code":0,
+	"status":0,
+	"message":"",
+	"data":[
+		{
+			"id": "028",
+			"province": "四川"
+		},
+		{
+			"id": "001",
+			"province": "江苏"
+		}
+	]
+}
