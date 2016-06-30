@@ -6,7 +6,7 @@ import Icon from 'antd/lib/icon';
 import Header from './header.jsx';
 import Footer from './footer.jsx';
 import TabPanes from '../components/tabs/main.jsx';
-import InputPanel from '../pages/input_info/input-shop-panel.jsx';
+// import InputPanel from '../pages/input_info/input-shop-panel.jsx';
 
 class Frame extends React.Component {
     constructor(props, context){
@@ -71,7 +71,6 @@ class Frame extends React.Component {
                         <Footer/>
                     </div>
                 </div>
-                <InputPanel/>
             </div>
         );
     }

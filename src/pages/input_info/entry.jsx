@@ -7,6 +7,7 @@ import  Radio  from 'antd/lib/radio';
 import  DatePicker   from 'antd/lib/date-picker';
 import  Cascader from 'antd/lib/cascader';
 import  Shops from './add-shops.jsx';
+import InputPanel from './input-shop-panel.jsx';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -46,7 +47,8 @@ class Inputs extends React.Component {
 
 	state = {
 		isNormalUser: true,
-		banks : []
+		banks : [],
+		showInputPanel: false
 	}
 
 	componentDidMount() {
@@ -75,6 +77,12 @@ class Inputs extends React.Component {
 				isNormalUser: true
 			});
 		}
+	}
+
+	showInputPanel = () => {
+		this.setState({
+			showInputPanel: true
+		});
 	}
 
     handleSelectChange = (value) => {
@@ -262,6 +270,7 @@ class Inputs extends React.Component {
 					    
         			</div>
         			<Shops />
+        			<InputPanel show={this.state.showInputPanel}/>
         			<div className="btn-w--submit">
 				    	<Button type="primary" size="default">保存</Button>
 				    	<Button type="primary" size="default">提交审核</Button>
