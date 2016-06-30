@@ -6,7 +6,20 @@
 		{
 			"id": "2222222222221",
 			"name": "豆汤饭",
-			"address": "东门大桥合江亭对面"
+			"address": "东门大桥合江亭对面",
+			"status" : 1,
+			"shop_type_id" : 1,
+			"shop_cbd_id" : 1,
+			"picture" : "http://qweqwewqkejhjkahs.png",
+			"business_hours" : "18:00-21:00",
+			"phone" : 13211122221,
+			"credentials" : "http://qweqwewqkejhjkahs.png|http://qweqwewqkejhjasdasdsadasdas.png",
+			"discount" : 10,
+			"discount_desc" : "12312312",
+			"commission" : 1,
+			"description" : "asdasdasdas",
+			"runtime_status" : 1,
+			"user_id" : 1
 		}
 	]
 }
