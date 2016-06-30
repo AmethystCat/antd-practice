@@ -20,34 +20,86 @@ class Setting extends React.Component {
         super(props);
         this.displayName = 'Setting';
     }
+ 
+	state = {
+		cbd: [],
+		shopType: []
+	}
+
+	addCbd = () => {
+		let cbd = document.getElementById('cbd-input');
+		console.log(cbd.value);
+		server.api_cbd_create({
+			title: cbd.value
+		}, (res) => {
+			if (res.code === 0) {
+				this.setState({
+					cbd: res.data || []
+				});
+			}
+		});
+	}
+
+	addShopType = () => {
+		let type = document.getElementById('shopType-input');
+		console.log(type.value);
+		server.api_shop_type_create({
+			title: type.value
+		}, (res) => {
+			if (res.code === 0) {
+				this.setState({
+					shopType: res.data || []
+				});
+			}
+		});
+	}
+
     render() {
         return (
         	<div className="setting-w">
         		<div className="setting-item setting-w--shop-type">
         			<h3>设置店铺类型</h3>
         			<div className="add-input-w">
-        				<Input placeholder="请输入内容"/>
-        				<Button type="primary" >添加</Button>
+        				<Input placeholder="请输入内容" id="shopType-input"/>
+        				<Button type="primary" onClick={this.addShopType}>添加</Button>
         			</div>
         			<div className="add-content-w">
-        				<div className="item">
-        					<span>春熙路</span>
-        					<ButtonGroup>
-        						<Button icon="delete" size="small"></Button>
-        						<Popover content={content('春熙路')}  trigger="click">
-							      	<Button icon="edit"  size="small"></Button>
-							    </Popover>
-        					</ButtonGroup>
-        				</div>
+						{this.state.shopType.map((el, index) => {
+							return (
+								<div className="item" key={index}>
+									<span>{el.title}</span>
+									<ButtonGroup>
+										<Button icon="delete" size="small"></Button>
+										<Popover content={content(el.title)}  trigger="click">
+											<Button icon="edit"  size="small"></Button>
+										</Popover>
+									</ButtonGroup>
+								</div>
+							);
+						})}
         			</div>
         		</div>
         		<div className="setting-item setting-w--trading-area">
         			<h3>设置商圈</h3>
         			<div className="add-input-w">
-        				<Input placeholder="请输入内容"/>
-        				<Button type="primary" >添加</Button>
+        				<Input placeholder="请输入内容" id="cbd-input"/>
+        				<Button type="primary" onClick={this.addCbd}>添加</Button>
         			</div>
-        			<div className="add-content-w"></div>
+        			<div className="add-content-w">
+						{this.state.cbd.map((el, index) => {
+							return (
+								<div className="item" key={index}>
+									<span>{el.title}</span>
+									<ButtonGroup>
+										<Button icon="delete" size="small"></Button>
+										<Popover content={content(el.title)}  trigger="click">
+											<Button icon="edit"  size="small"></Button>
+										</Popover>
+									</ButtonGroup>
+								</div>
+							);
+						})}
+					</div>
         		</div>
         	</div>
         );
