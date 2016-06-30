@@ -145,24 +145,25 @@ body {
 	@h: 650px;
 	&.show {
 		.add-panel {
-			height: @h;
+
+			bottom: @p;
 		}
 		.mask {
 			opacity: 1;
 			z-index: 2
 		}
 	}
-	.add-panel,.mask {
+	.add-panel, .mask {
 		transition: all .4s cubic-bezier(0.18, 0.89, 0.06, 1.04);
 	}
 	.add-panel {
-		display: none;
+		// display: none;
 		position: fixed;
-		bottom: @p;
+		bottom: -@h - 20;
 		left: @p;
 		right: @p;
 		z-index: 3;
-		height: 0;
+		height: @h;
 		padding: @p;
 		border-radius: 10px;
 		background: rgba(255,255,255,.9);
@@ -171,6 +172,7 @@ body {
 		overflow-x: hidden;
 	}
 	.mask {
+		// display: none;
 		position: fixed;
 		top: 0;
 		bottom: 0;
@@ -178,7 +180,7 @@ body {
 		right: 0;
 		width: 100%;
 		height: 100%;
-		z-index: 0;
+		z-index: -1;
 		background: rgba(0, 0, 0, 0.1);
 		opacity: 0;
 	}
@@ -202,7 +204,7 @@ body {
 .btn-close {
 	position: absolute;
 	right: 10px;
-	top: 0;
+	top: 10px;
 }
 .btn-cancel {
 	margin-left: 80px;
@@ -222,5 +224,8 @@ body {
 	}
 	.table-w {
 		margin-top: @p*3;
+	}
+	.ant-table-pagination {
+		margin-right: 50%;
 	}
 }

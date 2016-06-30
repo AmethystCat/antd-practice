@@ -48,10 +48,10 @@ class Frame extends React.Component {
                             <aside className="ant-layout-sider">
                                 <Menu mode="inline" onClick={this.handClick} selectedKeys={[menuTab.tabState.selectMenu]}>
                                     <Menu.Item key="商户录入">
-                                        <Icon type="mail" />商户录入
+                                        <Icon type="edit" />商户录入
                                     </Menu.Item>            
                                     <Menu.Item key="商户列表">
-                                        <Icon type="setting" />商户列表
+                                        <Icon type="book" />商户列表
                                     </Menu.Item>            
                                 </Menu>
                             </aside>
