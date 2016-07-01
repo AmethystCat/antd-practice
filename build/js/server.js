@@ -101,29 +101,29 @@ var send = function (type, api, parameters, success, async) {
     };
 
     // 商户提审（管理员）
-    // server.web_merchant_submit = function (data, callback) {
-    //     return send('post', contextPath + '/web/merchant/submit', data, callback);
-    // };
+     server.web_merchant_submit = function (data, callback) {
+         return send('post', contextPath + '/web/merchant/submit', data, callback);
+     };
 
     // 商户审核（管理员）
-    // server.web_merchant_audit = function (data, callback) {
-    //     return send('post', contextPath + '/web/merchant/audit', data, callback);
-    // };
+     server.web_merchant_audit = function (data, callback) {
+         return send('post', contextPath + '/web/merchant/audit', data, callback);
+     };
 
     // 商户列表（管理员）
-    // server.web_merchant_admin_list = function (data, callback) {
-    //     return send('post', contextPath + '/web/merchant/admin/list', data, callback);
-    // };
+     server.web_merchant_admin_list = function (data, callback) {
+         return send('post', contextPath + '/web/merchant/admin/list', data, callback);
+     };
 
     // 商户下线（管理员）
-    // server.web_merchant_offline = function (data, callback) {
-    //     return send('post', contextPath + '/web/merchant/offline', data, callback);
-    // };
+     server.web_merchant_offline = function (data, callback) {
+         return send('post', contextPath + '/web/merchant/offline', data, callback);
+     };
 
     // 商户重新上线（管理员）
-    // server.web_merchant_online = function (data, callback) {
-    //     return send('post', contextPath + '/web/merchant/online', data, callback);
-    // };
+     server.web_merchant_online = function (data, callback) {
+         return send('post', contextPath + '/web/merchant/online', data, callback);
+     };
 
     // 创建店铺
     server.web_shop_create = function (data, callback) {
@@ -145,20 +145,20 @@ var send = function (type, api, parameters, success, async) {
         return send('post', contextPath + '/web/shop/submit', data, callback);
     };
 
-    // 店铺审核（admin）
-    // server.web_shop_audit = function (data, callback) {
-    //     return send('post', contextPath + '/web/shop/audit', data, callback);
-    // };
+     // 店铺审核（admin）
+     server.web_shop_audit = function (data, callback) {
+         return send('post', contextPath + '/web/shop/audit', data, callback);
+     };
 
-    // 店铺下线（admin）
-    // server.web_shop_offline = function (data, callback) {
-    //     return send('post', contextPath + '/web/shop/offline', data, callback);
-    // };
+     // 店铺下线（admin）
+     server.web_shop_offline = function (data, callback) {
+         return send('post', contextPath + '/web/shop/offline', data, callback);
+     };
 
-    // 店铺重新上线（admin）
-    // server.web_shop_online = function (data, callback) {
-    //     return send('post', contextPath + '/web/shop/online', data, callback);
-    // };
+     // 店铺重新上线（admin）
+     server.web_shop_online = function (data, callback) {
+         return send('post', contextPath + '/web/shop/online', data, callback);
+     };
 
     // 省份列表（admin|operator）
     server.web_area_provinces = function (data, callback) {
@@ -181,14 +181,14 @@ var send = function (type, api, parameters, success, async) {
     };
 
     // 添加商圈（admin）
-    // server.api_cbd_create = function (data, callback) {
-    //     return send('post', contextPath + '/api/cbd/create', data, callback);
-    // };
+     server.api_cbd_create = function (data, callback) {
+         return send('post', contextPath + '/api/cbd/create', data, callback);
+     };
 
     // 删除商圈（admin）
-    // server.api_cbd_delete = function (data, callback) {
-    //     return send('post', contextPath + '/api/cbd/delete', data, callback);
-    // };
+     server.api_cbd_delete = function (data, callback) {
+         return send('post', contextPath + '/api/cbd/delete', data, callback);
+     };
 
     // 获取店铺类型列表（admin|operator）
     server.api_shop_type_list = function (data, callback) {
@@ -196,29 +196,29 @@ var send = function (type, api, parameters, success, async) {
     };
 
     // 添加店铺类型（admin）
-    // server.api_shop_type_create = function (data, callback) {
-    //     return send('post', contextPath + '/api/shop/type/create', data, callback);
-    // };
+     server.api_shop_type_create = function (data, callback) {
+         return send('post', contextPath + '/api/shop/type/create', data, callback);
+     };
 
     // 删除店铺类型（admin）
-    // server.api_shop_type_delete = function (data, callback) {
-    //     return send('post', contextPath + '/api/shop/type/delete', data, callback);
-    // };
+     server.api_shop_type_delete = function (data, callback) {
+         return send('post', contextPath + '/api/shop/type/delete', data, callback);
+     };
 
     // 添加业务员（admin）
-    // server.api_admin_salesman_create = function (data, callback) {
-    //     return send('post', contextPath + '/api/admin/salesman/create', data, callback);
-    // };
+     server.api_admin_salesman_create = function (data, callback) {
+         return send('post', contextPath + '/api/admin/salesman/create', data, callback);
+     };
 
     // 重置业务员密码（admin）
-    // server.api_admin_salesman_passwd = function (data, callback) {
-    //     return send('post', contextPath + '/api/admin/salesman/passwd', data, callback);
-    // };
+     server.api_admin_salesman_passwd = function (data, callback) {
+         return send('post', contextPath + '/api/admin/salesman/passwd', data, callback);
+     };
 
     // 冻结业务员账号（admin）
-    // server.api_admin_salesman_frozen = function (data, callback) {
-    //     return send('post', contextPath + '/api/admin/salesman/frozen', data, callback);
-    // };
+     server.api_admin_salesman_frozen = function (data, callback) {
+         return send('post', contextPath + '/api/admin/salesman/frozen', data, callback);
+     };
 
     // 业务员修改密码
     server.api_salesman_passwd = function (data, callback) {
