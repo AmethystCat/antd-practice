@@ -1,5 +1,6 @@
 import React from 'react';
 import Tabs from 'antd/lib/tabs';
+import Homer from '../pages/test.jsx';
 const TabPane = Tabs.TabPane;
 
 class TabPanes extends React.Component{
@@ -18,7 +19,7 @@ class TabPanes extends React.Component{
 		return this.props.panes.map((el, index) => {
 			switch(el) {
 				case '商户录入':
-					return (<TabPane tab={<span id={'tab-' + index}>{el}</span>} key={el}>商户录入</TabPane>);
+					return (<TabPane tab={<span id={'tab-' + index}>{el}</span>} key={el}>商户录入<br/><Homer /></TabPane>);
 				case '商户列表':
 					return (<TabPane tab={<span id={'tab-' + index}>{el}</span>} key={el}>商户列表</TabPane>);
 				default:
